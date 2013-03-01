@@ -179,8 +179,8 @@ def usage():
 
 def setup_usb():
     # Tested only with the Cheeky Dream Thunder
-    global DEVICE 
-    DEVICE = usb.core.find(idVendor=0x2123, idProduct=0x1010)
+    global DEVICE
+    DEVICE = usb.core.find(idVendor=0x0a81, idProduct=0x0701)
 
     if DEVICE is None:
         raise ValueError('Missile device not found')
@@ -190,13 +190,13 @@ def setup_usb():
         try:
             DEVICE.detach_kernel_driver(0)
         except Exception, e:
-            pass # already unregistered    
+            pass # already unregistered
 
     DEVICE.set_configuration()
 
 
 def send_cmd(cmd):
-    DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x02, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
+    DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [cmd], 0x0200)
 
 def led(cmd):
     DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x03, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
@@ -236,6 +236,9 @@ def run_command(command, value):
         for i in range(value):
             send_cmd(FIRE)
             time.sleep(4.5)
+        send_cmd(UP)
+        send_cmd(DOWN)
+        send_cmd(STOP)
     else:
         print "Error: Unknown command: '%s'" % command
 
