@@ -198,6 +198,10 @@ def setup_usb():
 def send_cmd(cmd):
     DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [cmd], 0x0200)
 
+def send_cmd_set(cmds):
+    for cmd in cmds:
+        send_cmd(cmd)
+
 def led(cmd):
     DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x03, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
 
@@ -236,9 +240,7 @@ def run_command(command, value):
         for i in range(value):
             send_cmd(FIRE)
             time.sleep(4.5)
-        send_cmd(UP)
-        send_cmd(DOWN)
-        send_cmd(STOP)
+        send_cmd_set([UP, DOWN, STOP])  # out of firing mode
     else:
         print "Error: Unknown command: '%s'" % command
 
