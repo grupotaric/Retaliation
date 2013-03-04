@@ -24,7 +24,7 @@
 #
 # Steps to use:
 #
-#  1.  Mount your Dream Cheeky Thunder USB missile launcher in a central and 
+#  1.  Mount your Dream Cheeky USB missile launcher in a central and
 #      fixed location.
 #
 #  2.  Copy this script onto the system connected to your missile lanucher.
@@ -59,7 +59,7 @@
 #
 #
 #  Requirements:
-#   * A Dream Cheeky Thunder USB Missile Launcher
+#   * A Dream Cheeky USB Missile Launcher
 #   * Python 2.6+
 #   * Python PyUSB Support and its dependencies 
 #      http://sourceforge.net/apps/trac/pyusb/
@@ -178,7 +178,7 @@ def usage():
 
 
 def setup_usb():
-    # Tested only with the Cheeky Dream Thunder
+    # Tested only with the Cheeky Dream Green Missile Launcher
     global DEVICE
     DEVICE = usb.core.find(idVendor=0x0a81, idProduct=0x0701)
 

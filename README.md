@@ -46,7 +46,7 @@ in this video</a>.
  
 ### How to Use
 
-  1.  Mount your <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a> 
+  1.  Mount your <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky USB Green Missile Launcher</a> 
       in a central and fixed location.
 
   2.  Download the <a href="https://github.com/codedance/Retaliation/raw/master/retaliation.py">retaliation.py</a> 
@@ -81,7 +81,7 @@ in this video</a>.
 
 ####  Requirements:
 
-  * A <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a>. 
+  * A <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky USB Green Missile Launcher</a>. 
     It may work with other models but I've only tested with this one.
   * Python 2.6+
   * Python PyUSB Support (on Mac use brew to "brew install libusb")
@@ -133,7 +133,7 @@ management software) for "coping a few in the head" during testing!
 ### Other Uses
  
 `retaliation.py` also doubles as a command-line scripting API for the *Dream Cheeky 
-USB Missile Launcher*.  You can invoke it to control the device from a script or 
+USB Green Missile Launcher*.  You can invoke it to control the device from a script or 
 command-line as follows:
 
       retaliation.py reset
